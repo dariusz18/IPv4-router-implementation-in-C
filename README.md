@@ -5,7 +5,7 @@ The router directs packets between networks, resolves MAC addresses using ARP, a
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 archive/
@@ -22,7 +22,7 @@ archive/
 
 ## ⚙️ Implemented Functions
 
-### 🔀 Routing
+### Routing
 
 | Function | Description |
 |---|---|
@@ -39,7 +39,7 @@ archive/
 | `update_sum` | Recalculates the IP checksum (sets it to 0, then recomputes) |
 | `update_eth` | Updates the Ethernet header with new source/destination MAC addresses |
 
-### 📬 ARP
+### ARP
 
 | Function | Description |
 |---|---|
@@ -50,7 +50,7 @@ archive/
 | `reply` | Creates and sends an ARP reply using the source MAC from the received request |
 | `procesare` | Processes the waiting packet queue after receiving an ARP reply — sends all packets waiting for that MAC |
 
-### 🚨 ICMP
+### ICMP
 
 | Function | Description |
 |---|---|
@@ -58,7 +58,7 @@ archive/
 | `create_icmp` | Builds a full ICMP error packet: constructs Ethernet, IP, and ICMP headers, copies the first 8 bytes of the original packet + IP header, and recalculates checksums |
 | `error` | Generates and sends ICMP error messages using `create_icmp` |
 
-### ⚙️ Entry Point
+### Entry Point
 
 | Function | Description |
 |---|---|
@@ -66,7 +66,7 @@ archive/
 
 ---
 
-## 🔄 Packet Flow
+## Packet Flow
 
 ```
 Packet received
@@ -85,7 +85,7 @@ Packet received
 
 ---
 
-## 💡 Design Decisions
+## Design Decisions
 
 - **Waiting queue** — packets that arrive before their next-hop MAC is resolved are held in a queue and flushed automatically once the ARP reply is received
 - **LPM routing** — ensures the most specific route is always selected for forwarding
