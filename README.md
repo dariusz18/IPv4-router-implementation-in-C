@@ -1,4 +1,4 @@
-# 🌐 IPv4 Router — C
+# IPv4 Router — C
 
 An IPv4 router implemented in C with full support for **packet forwarding**, **ARP**, and **ICMP** error handling.
 The router directs packets between networks, resolves MAC addresses using ARP, and communicates errors via ICMP messages.
@@ -20,7 +20,7 @@ archive/
 
 ---
 
-## ⚙️ Implemented Functions
+## Implemented Functions
 
 ### Routing
 
@@ -29,7 +29,7 @@ archive/
 | `get_route` | **Longest Prefix Match (LPM)** — scans the routing table, compares masks with the destination IP, returns the route with the longest matching mask |
 | `fwd_ipv4` | Forwards an IPv4 packet to the next hop — sends directly if MAC is known, otherwise queues the packet and sends an ARP request |
 
-### 🔎 Validation
+### Validation
 
 | Function | Description |
 |---|---|
